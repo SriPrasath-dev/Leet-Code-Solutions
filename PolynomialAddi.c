@@ -23,7 +23,7 @@ struct Node* addPolynomial(struct Node *p1, struct Node *p2)
     struct Node *result = NULL;
     struct Node *temp = NULL;
     struct Node *newNode;
-    while (p1 != NULL && p2 != NULL)
+    while (p1 != NULL || p2 != NULL)
     {
         if (p1->exp == p2->exp)
         {
