@@ -83,50 +83,11 @@ struct Node* addPolynomial(struct Node *p1, struct Node *p2)
     }
 
     /* Copy remaining terms of p1 */
-    while (p1 != NULL)
-    {
-        newNode = (struct Node *)malloc(sizeof(struct Node));
+if (p1 != NULL)
+    temp->next = p1;
 
-        newNode->coeff = p1->coeff;
-        newNode->exp = p1->exp;
-        newNode->next = NULL;
-
-        if (result == NULL)
-        {
-            result = newNode;
-            temp = newNode;
-        }
-        else
-        {
-            temp->next = newNode;
-            temp = newNode;
-        }
-
-        p1 = p1->next;
-    }
-
-    /* Copy remaining terms of p2 */
-    while (p2 != NULL)
-    {
-        newNode = (struct Node *)malloc(sizeof(struct Node));
-
-        newNode->coeff = p2->coeff;
-        newNode->exp = p2->exp;
-        newNode->next = NULL;
-
-        if (result == NULL)
-        {
-            result = newNode;
-            temp = newNode;
-        }
-        else
-        {
-            temp->next = newNode;
-            temp = newNode;
-        }
-
-        p2 = p2->next;
-    }
+if (p2 != NULL)
+    temp->next = p2;
 
     return result;
 }
